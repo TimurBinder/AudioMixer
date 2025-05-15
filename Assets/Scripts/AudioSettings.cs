@@ -11,16 +11,9 @@ public class AudioSettings : MonoBehaviour
     [SerializeField] private AudioSlider _masterSlider;
     [SerializeField] private AudioSlider _musicSlider;
     [SerializeField] private AudioSlider _buttonsSoundSlider;
+    [SerializeField] private TurnButtonAnimator _turnButtonAnimator;
 
     private bool _isMasterOn = true;
-    private AudioMixerSnapshot OnSnapshot;
-    private AudioMixerSnapshot OffSnapshot;
-
-    private void Awake()
-    {
-        OnSnapshot = _mixer.FindSnapshot(On);
-        OffSnapshot = _mixer.FindSnapshot(Off);
-    }
 
     private void OnEnable()
     {
@@ -38,22 +31,28 @@ public class AudioSettings : MonoBehaviour
 
     public void ToggleMusic()
     {
-        float transitionDuration = 0.5f;
-
         if (_isMasterOn)
         {
-            OffSnapshot.TransitionTo(transitionDuration);
+            ChangeVolume(0, _masterSlider.AudioMixerGroupName);
             _isMasterOn = false;
         }
         else
         {
-            OnSnapshot.TransitionTo(transitionDuration);
+            ChangeVolume(_masterSlider.SliderValue, _masterSlider.AudioMixerGroupName);
             _isMasterOn = true;
         }
+
+        _turnButtonAnimator.Toggle(_isMasterOn);
     }
 
     public void ChangeVolume(float value, string parameterName)
     {
+        if (parameterName == _masterSlider.AudioMixerGroupName && _isMasterOn == false)
+        {
+            _isMasterOn = true;
+            _turnButtonAnimator.Toggle(_isMasterOn);
+        }
+
         float maxValue = 1f;
         float minValue = 0.0001f;
 
@@ -62,6 +61,6 @@ public class AudioSettings : MonoBehaviour
         else if (value < minValue)
             value = minValue;
 
-        OnSnapshot.audioMixer.SetFloat(parameterName, Mathf.Log10(value) * 20);
+        _mixer.SetFloat(parameterName, Mathf.Log10(value) * 20);
     }
 }

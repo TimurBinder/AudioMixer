@@ -12,6 +12,9 @@ public class AudioSlider : MonoBehaviour
 
     public event Action<float, string> OnVolumeChanged;
 
+    public string AudioMixerGroupName => _audioMixerGroup.name;
+    public float SliderValue => _slider.value;
+
     private void Awake()
     {
         _slider = GetComponent<Slider>();
