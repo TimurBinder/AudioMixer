@@ -55,12 +55,13 @@ public class AudioSettings : MonoBehaviour
 
         float maxValue = 1f;
         float minValue = 0.0001f;
+        float step = 20;
 
         if (value > maxValue)
             value = maxValue;
         else if (value < minValue)
             value = minValue;
 
-        _mixer.SetFloat(parameterName, Mathf.Log10(value) * 20);
+        _mixer.SetFloat(parameterName, Mathf.Log10(value) * step);
     }
 }
