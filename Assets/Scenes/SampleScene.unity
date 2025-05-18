@@ -1622,13 +1622,13 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 620063409}
-        m_TargetAssemblyTypeName: AudioSlider, Assembly-CSharp
+      - m_Target: {fileID: 1313320651}
+        m_TargetAssemblyTypeName: AudioSlidersRegulator, Assembly-CSharp
         m_MethodName: ChangeVolume
-        m_Mode: 1
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 620063409}
+          m_ObjectArgumentAssemblyTypeName: AudioSlider, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1643,10 +1643,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 620063406}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f04084bd2aff21c49ba3659dd40252e6, type: 3}
+  m_Script: {fileID: 11500000, guid: e39151dbb197b954381c261e2c16f6de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _audioMixerGroup: {fileID: 1176079688628642759, guid: 2779dc4c47b0f9f43b687caf585f0798, type: 2}
+  _mixer: {fileID: 1176079688628642759, guid: 2779dc4c47b0f9f43b687caf585f0798, type: 2}
 --- !u!1 &671219267
 GameObject:
   m_ObjectHideFlags: 0
@@ -2126,13 +2126,13 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 867358652}
-        m_TargetAssemblyTypeName: AudioSlider, Assembly-CSharp
+      - m_Target: {fileID: 1313320651}
+        m_TargetAssemblyTypeName: AudioSlidersRegulator, Assembly-CSharp
         m_MethodName: ChangeVolume
-        m_Mode: 1
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 867358652}
+          m_ObjectArgumentAssemblyTypeName: AudioSlider, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -2147,10 +2147,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 867358649}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f04084bd2aff21c49ba3659dd40252e6, type: 3}
+  m_Script: {fileID: 11500000, guid: e39151dbb197b954381c261e2c16f6de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _audioMixerGroup: {fileID: 24300002, guid: 2779dc4c47b0f9f43b687caf585f0798, type: 2}
+  _mixer: {fileID: 24300002, guid: 2779dc4c47b0f9f43b687caf585f0798, type: 2}
 --- !u!1 &879764328
 GameObject:
   m_ObjectHideFlags: 0
@@ -2690,6 +2690,50 @@ Transform:
   - {fileID: 687826431}
   m_Father: {fileID: 993523304}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1313320650
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1313320652}
+  - component: {fileID: 1313320651}
+  m_Layer: 0
+  m_Name: AudioSlidersRegulator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1313320651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1313320650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f04084bd2aff21c49ba3659dd40252e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1313320652
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1313320650}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 384.18222, y: 263.23117, z: -2.2051587}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1410420147
 GameObject:
   m_ObjectHideFlags: 0
@@ -2837,6 +2881,7 @@ GameObject:
   - component: {fileID: 1418276537}
   - component: {fileID: 1418276541}
   - component: {fileID: 1418276540}
+  - component: {fileID: 1418276544}
   - component: {fileID: 1418276543}
   - component: {fileID: 1418276539}
   - component: {fileID: 1418276538}
@@ -2925,8 +2970,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1727013882}
-        m_TargetAssemblyTypeName: SoundSettings, Assembly-CSharp
+      - m_Target: {fileID: 1418276544}
+        m_TargetAssemblyTypeName: AudioToggler, Assembly-CSharp
         m_MethodName: ToggleMusic
         m_Mode: 1
         m_Arguments:
@@ -3009,6 +3054,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd967b5e620629448bd731d03ed932ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1418276544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1418276536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e0d9fd5dfe6d3343b384bf41c5754b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _animator: {fileID: 1418276543}
+  _regulator: {fileID: 1727013882}
+  _slidersRegulator: {fileID: 1313320651}
+  _masterSlider: {fileID: 867358652}
 --- !u!1 &1425908756
 GameObject:
   m_ObjectHideFlags: 0
@@ -3305,13 +3366,13 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1705459985}
-        m_TargetAssemblyTypeName: AudioSlider, Assembly-CSharp
+      - m_Target: {fileID: 1313320651}
+        m_TargetAssemblyTypeName: AudioSlidersRegulator, Assembly-CSharp
         m_MethodName: ChangeVolume
-        m_Mode: 1
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 1705459985}
+          m_ObjectArgumentAssemblyTypeName: AudioSlider, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -3326,10 +3387,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1705459982}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f04084bd2aff21c49ba3659dd40252e6, type: 3}
+  m_Script: {fileID: 11500000, guid: e39151dbb197b954381c261e2c16f6de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _audioMixerGroup: {fileID: 8715223976648146118, guid: 2779dc4c47b0f9f43b687caf585f0798, type: 2}
+  _mixer: {fileID: 8715223976648146118, guid: 2779dc4c47b0f9f43b687caf585f0798, type: 2}
 --- !u!1 &1710215583
 GameObject:
   m_ObjectHideFlags: 0
@@ -3420,7 +3481,7 @@ GameObject:
   - component: {fileID: 1727013883}
   - component: {fileID: 1727013882}
   m_Layer: 0
-  m_Name: AudioSettings
+  m_Name: AudioVolumeRegulator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3439,10 +3500,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mixer: {fileID: 24100000, guid: 2779dc4c47b0f9f43b687caf585f0798, type: 2}
-  _masterSlider: {fileID: 867358652}
-  _musicSlider: {fileID: 620063409}
-  _buttonsSoundSlider: {fileID: 1705459985}
-  _turnButtonAnimator: {fileID: 1418276543}
+  _sliderRegulator: {fileID: 1313320651}
 --- !u!4 &1727013883
 Transform:
   m_ObjectHideFlags: 0
@@ -4241,3 +4299,4 @@ SceneRoots:
   - {fileID: 1710215586}
   - {fileID: 993523304}
   - {fileID: 1727013883}
+  - {fileID: 1313320652}

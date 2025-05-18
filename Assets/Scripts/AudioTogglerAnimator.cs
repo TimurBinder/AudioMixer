@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [RequireComponent(typeof(Animator))]
-public class TurnButtonAnimator : MonoBehaviour
+public class AudioTogglerAnimator : MonoBehaviour
 {
     public static readonly int On = Animator.StringToHash("On");
 
